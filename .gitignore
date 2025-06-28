@@ -8,3 +8,7 @@ dist-ssr
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# IDE
+.vscode/
+.idea/
