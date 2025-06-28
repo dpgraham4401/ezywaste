@@ -1,6 +1,6 @@
-# Example
+# Ezy Waste
 
-To run this example:
+Application for managing RCRA waste
 
-- `npm install` or `yarn`
-- `npm start` or `yarn start`
+- `npm install`
+- `npm start`
