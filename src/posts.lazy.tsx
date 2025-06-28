@@ -1,40 +1,40 @@
-import * as React from 'react'
-import { Link, Outlet, createLazyRoute } from '@tanstack/react-router'
-import { useSuspenseQuery } from '@tanstack/react-query'
-import { postsQueryOptions } from './posts'
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { createLazyRoute, Link, Outlet } from "@tanstack/react-router";
+import * as React from "react";
+import { postsQueryOptions } from "./posts";
 
-export const Route = createLazyRoute('/posts')({
-  component: PostsLayoutComponent,
-})
+export const Route = createLazyRoute("/posts")({
+	component: PostsLayoutComponent,
+});
 
 function PostsLayoutComponent() {
-  const postsQuery = useSuspenseQuery(postsQueryOptions)
+	const postsQuery = useSuspenseQuery(postsQueryOptions);
 
-  const posts = postsQuery.data
+	const posts = postsQuery.data;
 
-  return (
-    <div className="p-2 flex gap-2">
-      <ul className="list-disc pl-4">
-        {[...posts, { id: 'i-do-not-exist', title: 'Non-existent Post' }].map(
-          (post) => {
-            return (
-              <li key={post.id} className="whitespace-nowrap">
-                <Link
-                  to="/posts/$postId"
-                  params={{
-                    postId: post.id,
-                  }}
-                  className="block py-1 px-2 text-blue-600 hover:opacity-75"
-                  activeProps={{ className: 'font-bold underline' }}
-                >
-                  <div>{post.title.substring(0, 20)}</div>
-                </Link>
-              </li>
-            )
-          },
-        )}
-      </ul>
-      <Outlet />
-    </div>
-  )
+	return (
+		<div className="p-2 flex gap-2">
+			<ul className="list-disc pl-4">
+				{[...posts, { id: "i-do-not-exist", title: "Non-existent Post" }].map(
+					(post) => {
+						return (
+							<li key={post.id} className="whitespace-nowrap">
+								<Link
+									to="/posts/$postId"
+									params={{
+										postId: post.id,
+									}}
+									className="block py-1 px-2 dark:text-gray-50 hover:opacity-75"
+									activeProps={{ className: "font-bold underline" }}
+								>
+									<div>{post.title.substring(0, 20)}</div>
+								</Link>
+							</li>
+						);
+					},
+				)}
+			</ul>
+			<Outlet />
+		</div>
+	);
 }
