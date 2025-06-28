@@ -1,34 +1,40 @@
 {
-  "name": "tanstack-router-react-example-react-query",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite --port 3000",
-    "build": "vite build && tsc --noEmit",
-    "serve": "vite preview",
-    "start": "vite",
-    "test": "vitest",
-    "prepare": "husky"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
-    "@tanstack/react-query": "^5.81.5",
-    "@tanstack/react-query-devtools": "^5.81.5",
-    "@tanstack/react-router": "^1.122.0",
-    "@tanstack/react-router-devtools": "^1.122.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "redaxios": "^0.5.1",
-    "tailwindcss": "^4.1.11"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.0.6",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.6.0",
-    "husky": "^9.1.7",
-    "typescript": "^5.8.3",
-    "vite": "^7.0.0",
-    "vitest": "^3.2.4"
-  }
+	"name": "tanstack-router-react-example-react-query",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite --port 3000",
+		"build": "vite build && tsc --noEmit",
+		"serve": "vite preview",
+		"start": "vite",
+		"test": "vitest",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.11",
+		"@tanstack/react-query": "^5.81.5",
+		"@tanstack/react-query-devtools": "^5.81.5",
+		"@tanstack/react-router": "^1.122.0",
+		"@tanstack/react-router-devtools": "^1.122.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"redaxios": "^0.5.1",
+		"tailwindcss": "^4.1.11"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.0.6",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"@vitejs/plugin-react": "^4.6.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.2",
+		"typescript": "^5.8.3",
+		"vite": "^7.0.0",
+		"vitest": "^3.2.4"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
+	}
 }
