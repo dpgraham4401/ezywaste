@@ -25,6 +25,6 @@ html {
 }
 
 body {
-    @apply bg-gray-50 text-gray-950 dark:bg-jet dark:text-gray-200;
+    @apply bg-baby-powder text-black-olive dark:bg-jet dark:text-gray-200;
 }
 

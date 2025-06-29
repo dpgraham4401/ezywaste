@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import React from "react";
+import { ThemeToggle } from "~/components/Theme/ThemeToggle";
 
 export const Route = createRootRouteWithContext<{
 	queryClient: QueryClient;
@@ -25,28 +26,33 @@ export const Route = createRootRouteWithContext<{
 function RootComponent() {
 	return (
 		<>
-			<div className="p-2 flex gap-2 text-lg">
-				<Link
-					to="/"
-					activeProps={{
-						className: "font-bold",
-					}}
-					activeOptions={{ exact: true }}
-				>
-					Home
-				</Link>{" "}
-				<Link
-					to="/posts"
-					activeProps={{
-						className: "font-bold",
-					}}
-				>
-					Posts
-				</Link>
+			<div className="flex justify-between">
+				<div className="p-2 flex gap-2 text-lg">
+					<Link
+						to="/"
+						activeProps={{
+							className: "font-bold",
+						}}
+						activeOptions={{ exact: true }}
+					>
+						Home
+					</Link>{" "}
+					<Link
+						to="/posts"
+						activeProps={{
+							className: "font-bold",
+						}}
+					>
+						Posts
+					</Link>
+				</div>
+				<div className="p-2">
+					<ThemeToggle />
+				</div>
 			</div>
 			<hr />
 			<Outlet />
-			<ReactQueryDevtools buttonPosition="top-right" />
+			<ReactQueryDevtools buttonPosition="bottom-left" />
 			<TanStackRouterDevtools position="bottom-right" />
 		</>
 	);
