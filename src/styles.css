@@ -1,20 +1,30 @@
 @import 'tailwindcss';
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-  }
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+    --color-baby-powder: #fefefa;
+    --color-cadet-gray: #879a94;
+    --color-dark-green: #17302b;
+    --color-floral-white: #fcf7ee;
+    --color-pine-green: #2c7361;
+
+    --color-jet: #2e2f2f;
+    --color-black-olive: #3b3a35;
+    --color-feldgrau: #5a6664;
+    --color-brunswick-green: #1b3e35;
+    --color-errie-black: #0d1c17;
 }
 
 html {
-  color-scheme: light dark;
+    color-scheme: light dark;
 }
+
 * {
-  @apply border-gray-200 dark:border-gray-700;
+    @apply border-gray-200 dark:border-gray-700;
 }
+
 body {
-  @apply bg-gray-50 text-gray-950 dark:bg-gray-600 dark:text-gray-200;
+    @apply bg-gray-50 text-gray-950 dark:bg-jet dark:text-gray-200;
 }
+
