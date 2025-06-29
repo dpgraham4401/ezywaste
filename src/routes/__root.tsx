@@ -7,7 +7,7 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import React from "react";
-import { ThemeToggle } from "~/components/Theme/ThemeToggle";
+import { ThemeToggle } from "~/components/Header/ThemeToggle";
 
 export const Route = createRootRouteWithContext<{
 	queryClient: QueryClient;
