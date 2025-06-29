@@ -1,10 +1,14 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import type React from "react";
 import { useState } from "react";
-import { GetStartedButton } from "~/components/UI/GetStartedButton";
+import { Button } from "~/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = ["Features", "Pricing", "Contact"];
+
+const GetStartedButton = () => (
+	<Button variant="destructive">Get Started</Button>
+);
 
 export const Header: React.FC = () => {
 	const [mobileOpen, setMobileOpen] = useState(false);

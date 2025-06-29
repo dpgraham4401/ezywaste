@@ -1,4 +1,6 @@
 import { ReactElement } from "react";
+import { ExampleDashboard } from "~/components/Hero/ExampleDashboard";
+import { Button } from "~/components/ui/button";
 
 export const Hero = () => (
 	<section className="bg-floralWhite dark:bg-babyPowder text-darkGreen dark:text-floralWhite py-20">
@@ -11,17 +13,14 @@ export const Hero = () => (
 					Simplify hazardous waste management with automation and accurate,
 					up‑to‑date data.
 				</p>
-				<button
-					type="button"
-					className="bg-pineGreen hover:bg-darkGreen text-babyPowder font-semibold px-6 py-3 rounded"
-				>
+				<Button className="bg-pineGreen hover:bg-darkGreen text-babyPowder font-semibold px-6 py-3 rounded">
 					Get Started
-				</button>
+				</Button>
 			</div>
 			<div className="md:w-1/2 mt-8 md:mt-0">
 				{/* Placeholder for dashboard screenshot */}
 				<div className="rounded-lg shadow-lg overflow-hidden">
-					<img src="/dashboard-screenshot.png" alt="Compliance dashboard" />
+					<ExampleDashboard />
 				</div>
 			</div>
 		</div>

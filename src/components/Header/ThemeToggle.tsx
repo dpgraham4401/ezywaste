@@ -1,10 +1,12 @@
-// ThemeToggle.tsx
-import type React from "react";
+import { MoonIcon, SunIcon } from "@heroicons/react/16/solid";
 import { useCallback, useEffect, useState } from "react";
 
 const THEME_KEY = "theme";
 type Theme = "light" | "dark";
 
+/**
+ * Get the initial theme based on localStorage or system preference.
+ */
 const getInitialTheme = (): Theme => {
 	if (typeof window !== "undefined") {
 		const stored = localStorage.getItem(THEME_KEY);
@@ -17,7 +19,11 @@ const getInitialTheme = (): Theme => {
 	return "light";
 };
 
-export const ThemeToggle: React.FC = () => {
+/**
+ * ThemeToggle component to switch between light and dark themes.
+ * It uses localStorage to persist the user's theme preference.
+ */
+export const ThemeToggle = () => {
 	const [isDark, setIsDark] = useState<boolean>(
 		() => getInitialTheme() === "dark",
 	);
@@ -37,7 +43,6 @@ export const ThemeToggle: React.FC = () => {
 
 	useEffect(() => {
 		applyTheme(getInitialTheme());
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [applyTheme]);
 
 	return (
@@ -48,7 +53,11 @@ export const ThemeToggle: React.FC = () => {
 			className="border-none h-1/2 bg-none"
 			onClick={toggleTheme}
 		>
-			{isDark ? "dark" : "light"}
+			{isDark ? (
+				<MoonIcon className="h-6 w-6 hover:fill-gray-700 transition-all duration-100" />
+			) : (
+				<SunIcon className="h-6 w-6  hover:fill-gray-500 transition-all duration-100" />
+			)}
 		</button>
 	);
 };
