@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import React from "react";
+import { Hero } from "~/components/Hero/Hero";
 
 export const Route = createFileRoute("/")({
 	component: IndexRouteComponent,
@@ -7,7 +8,8 @@ export const Route = createFileRoute("/")({
 
 function IndexRouteComponent() {
 	return (
-		<div className="p-2">
+		<div>
+			<Hero />
 			<h3>Home!</h3>
 		</div>
 	);

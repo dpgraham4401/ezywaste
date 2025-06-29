@@ -3,28 +3,24 @@
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-    --color-baby-powder: #fefefa;
-    --color-cadet-gray: #879a94;
-    --color-dark-green: #17302b;
-    --color-floral-white: #fcf7ee;
-    --color-pine-green: #2c7361;
+    --color-babyPowder: #fefefa;
+    --color-cadetGray: #879a94;
+    --color-darkGreen: #17302b;
+    --color-floralWhite: #fcf7ee;
+    --color-pineGreen: #2c7361;
 
     --color-jet: #2e2f2f;
-    --color-black-olive: #3b3a35;
+    --color-blackOlive: #3b3a35;
     --color-feldgrau: #5a6664;
-    --color-brunswick-green: #1b3e35;
-    --color-errie-black: #0d1c17;
+    --color-brunswickGreen: #1b3e35;
+    --color-errieBlack: #0d1c17;
 }
 
 html {
     color-scheme: light dark;
 }
 
-* {
-    @apply border-gray-200 dark:border-gray-700;
-}
-
 body {
-    @apply bg-baby-powder text-black-olive dark:bg-jet dark:text-gray-200;
+    @apply bg-babyPowder text-blackOlive dark:bg-jet dark:text-gray-200;
 }
 
