@@ -9,7 +9,7 @@ type PostType = {
 	body: string;
 };
 
-const fetchPosts = async () => {
+export const fetchPosts = async () => {
 	console.info("Fetching posts...");
 	await new Promise((r) => setTimeout(r, 500));
 	return axios
@@ -17,7 +17,7 @@ const fetchPosts = async () => {
 		.then((r) => r.data.slice(0, 10));
 };
 
-const fetchPost = async (postId: string) => {
+export const fetchPost = async (postId: string) => {
 	console.info(`Fetching post with id ${postId}...`);
 	await new Promise((r) => setTimeout(r, 500));
 	const post = await axios
@@ -31,14 +31,3 @@ const fetchPost = async (postId: string) => {
 
 	return post;
 };
-
-export const postQueryOptions = (postId: string) =>
-	queryOptions({
-		queryKey: ["posts", { postId }],
-		queryFn: () => fetchPost(postId),
-	});
-
-export const postsQueryOptions = queryOptions({
-	queryKey: ["posts"],
-	queryFn: () => fetchPosts(),
-});

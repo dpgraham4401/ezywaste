@@ -1,15 +1,16 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { createLazyRoute, Link, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 import * as React from "react";
-import { postsQueryOptions } from "./posts";
+import { postsQueryOptions } from "~/postsQueryOptions";
 
-export const Route = createLazyRoute("/posts")({
+export const Route = createFileRoute("/posts")({
+	loader: ({ context: { queryClient } }) =>
+		queryClient.ensureQueryData(postsQueryOptions),
 	component: PostsLayoutComponent,
 });
 
 function PostsLayoutComponent() {
 	const postsQuery = useSuspenseQuery(postsQueryOptions);
-
 	const posts = postsQuery.data;
 
 	return (
@@ -24,7 +25,7 @@ function PostsLayoutComponent() {
 									params={{
 										postId: post.id,
 									}}
-									className="block py-1 px-2 dark:text-gray-50 hover:opacity-75"
+									className="block py-1 text-blue-600 hover:opacity-75"
 									activeProps={{ className: "font-bold underline" }}
 								>
 									<div>{post.title.substring(0, 20)}</div>
@@ -34,6 +35,7 @@ function PostsLayoutComponent() {
 					},
 				)}
 			</ul>
+			<hr />
 			<Outlet />
 		</div>
 	);
