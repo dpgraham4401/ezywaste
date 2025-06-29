@@ -6,5 +6,6 @@ describe("ThemeToggle component", () => {
 	it("should render", () => {
 		render(<ThemeToggle />);
 		const toggleButton = screen.getByRole("button", { name: /theme toggle/i });
+		expect(toggleButton).toBeInTheDocument();
 	});
 });
