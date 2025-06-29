@@ -14,4 +14,9 @@ export default defineConfig({
 		tsconfigPaths(),
 		react(),
 	],
+	test: {
+		environment: "jsdom",
+		globals: true,
+		setupFiles: ["./mocks/setupTests.ts"],
+	},
 });
