@@ -1,7 +1,6 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import type React from "react";
 import { useState } from "react";
-import logo from "~/assets/img/logo.svg?url";
 import { Button } from "~/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -22,7 +21,7 @@ export const Header: React.FC = () => {
 					className="text-xl font-semibold hover:text-pineGreen dark:hover:text-brunswickGreen"
 					type="button"
 				>
-					<img src={logo} className="h-20" alt="EZ waste logo" />
+					<img src="/logo.svg" className="h-20" alt="EZ waste logo" />
 				</a>
 				<nav className="hidden md:flex space-x-6 items-center">
 					{navItems.map((item) => (
