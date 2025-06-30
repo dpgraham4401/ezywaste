@@ -3,7 +3,7 @@ import { ExampleDashboard } from "~/components/Hero/ExampleDashboard";
 import { Button } from "~/components/ui/button";
 
 export const Hero = () => (
-	<section className="bg-floralWhite dark:bg-babyPowder text-darkGreen dark:text-floralWhite py-20">
+	<section className="bg-floralWhite dark:bg-blackOlive text-darkGreen dark:text-floralWhite py-20">
 		<div className="container mx-auto px-6 md:flex items-center justify-between">
 			<div className="md:w-1/2">
 				<h1 className="text-4xl font-bold mb-4">

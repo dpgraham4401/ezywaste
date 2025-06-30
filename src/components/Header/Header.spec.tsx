@@ -5,7 +5,7 @@ import { Header } from "./Header";
 describe("Header component", () => {
 	it("should render a logo", () => {
 		render(<Header />);
-		const logo = screen.getByText(/EZ waste/i);
+		const logo = screen.getByAltText(/EZ waste/i);
 		expect(logo).toBeInTheDocument();
 	});
 });

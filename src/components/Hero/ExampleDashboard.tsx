@@ -1,6 +1,6 @@
 export const ExampleDashboard = () => {
 	return (
-		<section className="container mx-auto px-6 py-8">
+		<section className="container mx-auto px-6 py-8 dark:bg-floralWhite">
 			<div className="bg-floralWhite dark:bg-blackOlive rounded-lg shadow p-6">
 				<h2 className="text-2xl text-darkGreen dark:text-floralWhite font-semibold mb-4">
 					Compliance Overview
@@ -13,7 +13,7 @@ export const ExampleDashboard = () => {
 						<div className="w-3/4 bg-pineGreen dark:bg-brunswickGreen h-full"></div>
 					</div>
 				</div>
-				<table className="w-full text-left">
+				<table className="w-full text-left overflow-x-auto whitespace-nowrap border-spacing-2 border-separate">
 					<thead>
 						<tr>
 							<th className="dark:text-ashGray text-feldgrau">Manifest ID</th>
